@@ -18,14 +18,15 @@
 # -------------------------------------------------------------------------- #
 #
 # Quartus Prime
-# Version 16.1.2 Build 203 01/18/2017 SJ Standard Edition
-# Date created = 19:17:39  March 01, 2017
+# Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
+# Date created = 14:49:56  April 21, 2017
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "16.1"
-DATE = "19:17:39  March 01, 2017"
+DATE = "14:49:56  April 21, 2017"
 
 # Revisions
 
+PROJECT_REVISION = "classic_boot"
 PROJECT_REVISION = "piccolo_boot"
