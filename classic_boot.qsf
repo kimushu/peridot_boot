@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE6E22C8
-set_global_assignment -name TOP_LEVEL_ENTITY olive_std_top
+set_global_assignment -name TOP_LEVEL_ENTITY classic_boot_top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:29:37  SEPTEMBER 08, 2014"
 set_global_assignment -name LAST_QUARTUS_VERSION "16.1.2 Lite Edition"
@@ -68,9 +68,6 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name USE_CHECKSUM_AS_USERCODE OFF
 set_global_assignment -name STRATIX_JTAG_USER_CODE 20160116
 
@@ -168,16 +165,12 @@ set_instance_assignment -name RESERVE_PIN AS_OUTPUT_DRIVING_GROUND -to SDR_A[12]
 #set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to SDR_*
 #set_instance_assignment -name FAST_INPUT_REGISTER ON -to SDR_DQ*
 #set_instance_assignment -name FAST_OUTPUT_ENABLE_REGISTER ON -to SDR_DQ*
-set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to SDR_*
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to EPCS_*
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SCI_*
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to D[*]
 
 
 # Project files Assignments
 # ==========================
 
-set_global_assignment -name QIP_FILE classic_boot_core/synthesis/classic_boot_core.qip
+set_global_assignment -name QIP_FILE gen1_boot_core/synthesis/gen1_boot_core.qip
 set_global_assignment -name QIP_FILE ip/syspll_classic/syspll.qip
 set_global_assignment -name VERILOG_FILE classic_boot_top.v
 set_global_assignment -name SDC_FILE peridot_classic.sdc
@@ -189,4 +182,12 @@ set_global_assignment -name SDC_FILE peridot_classic.sdc
 
 set_global_assignment -name SMART_RECOMPILE ON
 set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE AREA"
+
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to SDR_*
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to EPCS_*
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SCI_*
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to D[*]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

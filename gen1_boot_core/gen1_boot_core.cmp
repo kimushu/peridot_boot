@@ -1,0 +1,30 @@
+	component gen1_boot_core is
+		port (
+			clk_100m_clk           : in    std_logic                     := 'X';             -- clk
+			clk_25m_clk            : in    std_logic                     := 'X';             -- clk
+			nios2_cpu_resetrequest : in    std_logic                     := 'X';             -- cpu_resetrequest
+			nios2_cpu_resettaken   : out   std_logic;                                        -- cpu_resettaken
+			reset_reset_n          : in    std_logic                     := 'X';             -- reset_n
+			sci_sclk               : in    std_logic                     := 'X';             -- sclk
+			sci_txd                : in    std_logic                     := 'X';             -- txd
+			sci_txr_n              : out   std_logic;                                        -- txr_n
+			sci_rxd                : out   std_logic;                                        -- rxd
+			sci_rxr_n              : in    std_logic                     := 'X';             -- rxr_n
+			sdr_addr               : out   std_logic_vector(11 downto 0);                    -- addr
+			sdr_ba                 : out   std_logic_vector(1 downto 0);                     -- ba
+			sdr_cas_n              : out   std_logic;                                        -- cas_n
+			sdr_cke                : out   std_logic;                                        -- cke
+			sdr_cs_n               : out   std_logic;                                        -- cs_n
+			sdr_dq                 : inout std_logic_vector(15 downto 0) := (others => 'X'); -- dq
+			sdr_dqm                : out   std_logic_vector(1 downto 0);                     -- dqm
+			sdr_ras_n              : out   std_logic;                                        -- ras_n
+			sdr_we_n               : out   std_logic;                                        -- we_n
+			swi_cpureset           : out   std_logic;                                        -- cpureset
+			swi_led                : out   std_logic;                                        -- led
+			swi_cso_n              : out   std_logic;                                        -- cso_n
+			swi_dclk               : out   std_logic;                                        -- dclk
+			swi_asdo               : out   std_logic;                                        -- asdo
+			swi_data0              : in    std_logic                     := 'X'              -- data0
+		);
+	end component gen1_boot_core;
+

@@ -1,0 +1,29 @@
+	component ngs_boot_core is
+		port (
+			clk_100m_clk           : in    std_logic                     := 'X';             -- clk
+			clk_25m_clk            : in    std_logic                     := 'X';             -- clk
+			epcs_cso_n             : out   std_logic;                                        -- cso_n
+			epcs_dclk              : out   std_logic;                                        -- dclk
+			epcs_asdo              : out   std_logic;                                        -- asdo
+			epcs_data0             : in    std_logic                     := 'X';             -- data0
+			gpio_export            : inout std_logic_vector(29 downto 0) := (others => 'X'); -- export
+			hostuart_rxd           : in    std_logic                     := 'X';             -- rxd
+			hostuart_txd           : out   std_logic;                                        -- txd
+			mreset_mreset_n        : in    std_logic                     := 'X';             -- mreset_n
+			nios2_cpu_resetrequest : in    std_logic                     := 'X';             -- cpu_resetrequest
+			nios2_cpu_resettaken   : out   std_logic;                                        -- cpu_resettaken
+			reset_reset_n          : in    std_logic                     := 'X';             -- reset_n
+			sdr_addr               : out   std_logic_vector(11 downto 0);                    -- addr
+			sdr_ba                 : out   std_logic_vector(1 downto 0);                     -- ba
+			sdr_cas_n              : out   std_logic;                                        -- cas_n
+			sdr_cke                : out   std_logic;                                        -- cke
+			sdr_cs_n               : out   std_logic;                                        -- cs_n
+			sdr_dq                 : inout std_logic_vector(15 downto 0) := (others => 'X'); -- dq
+			sdr_dqm                : out   std_logic_vector(1 downto 0);                     -- dqm
+			sdr_ras_n              : out   std_logic;                                        -- ras_n
+			sdr_we_n               : out   std_logic;                                        -- we_n
+			swi_cpu_resetrequest   : out   std_logic;                                        -- cpu_resetrequest
+			swi_led                : out   std_logic_vector(3 downto 0)                      -- led
+		);
+	end component ngs_boot_core;
+
