@@ -4,3 +4,6 @@
 [submodule "ip/peridot_peripherals"]
 	path = ip/peridot_peripherals
 	url = https://github.com/kimushu/peridot_peripherals.git
+[submodule "ip/peridot_gen1_peripherals"]
+	path = ip/peridot_gen1_peripherals
+	url = https://github.com/kimushu/peridot_gen1_peripherals.git
