@@ -1,0 +1,6 @@
+[submodule "ip/peridot_fpga_writer"]
+	path = ip/peridot_fpga_writer
+	url = https://github.com/kimushu/peridot_fpga_writer.git
+[submodule "ip/peridot_peripherals"]
+	path = ip/peridot_peripherals
+	url = https://github.com/kimushu/peridot_peripherals.git
