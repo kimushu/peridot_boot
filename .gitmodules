@@ -1,6 +1,3 @@
-[submodule "ip/peridot_flash_writer"]
-	path = ip/peridot_flash_writer
-	url = https://github.com/kimushu/peridot_flash_writer.git
 [submodule "ip/peridot_peripherals"]
 	path = ip/peridot_peripherals
 	url = https://github.com/kimushu/peridot_peripherals.git
@@ -10,3 +7,6 @@
 [submodule "ip/peridot_sw_packages"]
 	path = ip/peridot_sw_packages
 	url = https://github.com/kimushu/peridot_sw_packages.git
+[submodule "ip/flash_writer"]
+	path = ip/flash_writer
+	url = https://github.com/kimushu/flash_writer.git
