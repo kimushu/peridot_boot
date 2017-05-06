@@ -2,7 +2,7 @@ set_global_assignment -entity "ngs_boot_core" -library "ngs_boot_core" -name IP_
 set_global_assignment -entity "ngs_boot_core" -library "ngs_boot_core" -name IP_TOOL_VERSION "16.1"
 set_global_assignment -entity "ngs_boot_core" -library "ngs_boot_core" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "ngs_boot_core" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../ngs_boot_core.sopcinfo"]
-set_global_assignment -entity "ngs_boot_core" -library "ngs_boot_core" -name SLD_INFO "QSYS_NAME ngs_boot_core HAS_SOPCINFO 1 GENERATION_ID 1489088162"
+set_global_assignment -entity "ngs_boot_core" -library "ngs_boot_core" -name SLD_INFO "QSYS_NAME ngs_boot_core HAS_SOPCINFO 1 GENERATION_ID 1494052269"
 set_global_assignment -library "ngs_boot_core" -name MISC_FILE [file join $::quartus(qip_path) "../ngs_boot_core.cmp"]
 set_global_assignment -library "ngs_boot_core" -name SLD_FILE [file join $::quartus(qip_path) "ngs_boot_core.regmap"]
 set_global_assignment -library "ngs_boot_core" -name SLD_FILE [file join $::quartus(qip_path) "ngs_boot_core.debuginfo"]
@@ -16,7 +16,7 @@ set_global_assignment -entity "ngs_boot_core" -library "ngs_boot_core" -name IP_
 set_global_assignment -entity "ngs_boot_core" -library "ngs_boot_core" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "ngs_boot_core" -library "ngs_boot_core" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "ngs_boot_core" -library "ngs_boot_core" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "ngs_boot_core" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTQ4OTA4ODE2Mg==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "ngs_boot_core" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTQ5NDA1MjI2OQ==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "ngs_boot_core" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::TUFYIDEw::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "ngs_boot_core" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MTBNMDhTQUUxNDRDOEc=::QXV0byBERVZJQ0U="
 set_global_assignment -entity "ngs_boot_core" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::OA==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -1238,15 +1238,24 @@ set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -nam
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_AUTHOR "Si03U1lTVEVNIFdPUktTIExJTUlURUQ="
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_VERSION "MTYuMQ=="
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_DESCRIPTION "UEVSSURPVCBIb3N0IHRvIEF2YWxvbi1NTSBicmlkZ2U="
+set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "UkVDT05GSUdfRkVBVFVSRQ==::RElTQUJMRQ==::UkVDT05GSUdfRkVBVFVSRQ=="
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "VVNFX1JFQ09ORklH::ZmFsc2U=::VXNlIHJlY29uZmlndXJhdGlvbiBmdW5jdGlvbg=="
+set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "SU5TVEFOQ0VfQUxURFVBTEJPT1Q=::RU5BQkxF::SU5TVEFOQ0VfQUxURFVBTEJPT1Q="
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "VVNFX0FMVERVQUxCT09U::dHJ1ZQ==::SW5zdGFuY2UgYWx0X2R1YWxfYm9vdCBjb3Jlcw=="
+set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "Q0hJUFVJRF9GRUFUVVJF::RU5BQkxF::Q0hJUFVJRF9GRUFUVVJF"
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "VVNFX0NISVBVSUQ=::dHJ1ZQ==::VXNlIGNoaXAtVUlEIGZvciBhIGJvYXJkIHNlcmlhbCBudW1iZXI="
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "SE9TVElOVEVSRkFDRV9UWVBF::VUFSVA==::SG9zdCBpbnRlcmZhY2UgdHlwZQ=="
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "SE9TVFVBUlRfQkFVRFJBVEU=::MTE1MjAw::VUFSVCBiYXVkcmF0ZQ=="
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "SE9TVFVBUlRfSU5GSUZPREVQVEg=::Ng==::VUFSVCBpbmZpZm8gZGVwdGg="
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "UEVSSURPVF9HRU5DT0RF::ODg=::UEVSSURPVCBpZGVudGlmaWVy"
+set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "UkVDT05GX0RFTEFZX0NZQ0xF::NTAwMDAwMA==::UkVDT05GX0RFTEFZX0NZQ0xF"
+set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "Q09ORklHX0NZQ0xF::OQ==::Q09ORklHX0NZQ0xF"
+set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "UkVTRVRfVElNRVJfQ1lDTEU=::MTM=::UkVTRVRfVElNRVJfQ1lDTEU="
+set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "U1dJX0VQQ1NCT09UX0ZFQVRVUkU=::RU5BQkxF::U1dJX0VQQ1NCT09UX0ZFQVRVUkU="
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "U1dJX1VTRV9FUENTQk9PVA==::dHJ1ZQ==::VXNlIEVQQ1MvRVBDUSBhY2Nlc3MgcmVnaXN0ZXJz"
+set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "U1dJX1VJRFJFQURfRkVBVFVSRQ==::RU5BQkxF::U1dJX1VJRFJFQURfRkVBVFVSRQ=="
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "U1dJX1VTRV9VSURSRUFE::dHJ1ZQ==::VXNlIGNoaXAtVUlEIHJlYWRvdXQgcmVnaXN0ZXJz"
+set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "U1dJX01FU1NBR0VfRkVBVFVSRQ==::RU5BQkxF::U1dJX01FU1NBR0VfRkVBVFVSRQ=="
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "U1dJX1VTRV9NRVNTQUdF::dHJ1ZQ==::VXNlIG1lc3NhZ2UgYW5kIHNvZnR3YXJlIGludGVycnB1dCByZWdpc3RlcnM="
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "U1dJX0NMQVNTSUQ=::MTkyMzY3ODIwOA==::MzIgYml0IENsYXNzIElE"
 set_global_assignment -entity "peridot_hostbridge" -library "ngs_boot_core" -name IP_COMPONENT_PARAMETER "U1dJX0NQVVJFU0VUX0tFWQ==::NTcwMDU=::Y3B1cmVzZXQga2V5IHZhbHVl"
@@ -1732,18 +1741,18 @@ set_global_assignment -library "ngs_boot_core" -name VERILOG_FILE [file join $::
 set_global_assignment -library "ngs_boot_core" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/rtl/alt_dual_boot.v"]
 set_global_assignment -library "ngs_boot_core" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast.v"]
 set_global_assignment -library "ngs_boot_core" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu.ocp"]
-set_global_assignment -library "ngs_boot_core" -name SDC_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu.sdc"]
 set_global_assignment -library "ngs_boot_core" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu.v"]
-set_global_assignment -library "ngs_boot_core" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_dc_tag_ram.mif"]
+set_global_assignment -library "ngs_boot_core" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_debug_slave_wrapper.v"]
 set_global_assignment -library "ngs_boot_core" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_debug_slave_sysclk.v"]
 set_global_assignment -library "ngs_boot_core" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_debug_slave_tck.v"]
-set_global_assignment -library "ngs_boot_core" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_debug_slave_wrapper.v"]
-set_global_assignment -library "ngs_boot_core" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_ic_tag_ram.mif"]
 set_global_assignment -library "ngs_boot_core" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_mult_cell.v"]
-set_global_assignment -library "ngs_boot_core" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_ociram_default_contents.mif"]
-set_global_assignment -library "ngs_boot_core" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_rf_ram_a.mif"]
-set_global_assignment -library "ngs_boot_core" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_rf_ram_b.mif"]
 set_global_assignment -library "ngs_boot_core" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_test_bench.v"]
+set_global_assignment -library "ngs_boot_core" -name SDC_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu.sdc"]
+set_global_assignment -library "ngs_boot_core" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_ociram_default_contents.mif"]
+set_global_assignment -library "ngs_boot_core" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_dc_tag_ram.mif"]
+set_global_assignment -library "ngs_boot_core" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_rf_ram_b.mif"]
+set_global_assignment -library "ngs_boot_core" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_rf_ram_a.mif"]
+set_global_assignment -library "ngs_boot_core" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_nios2_fast_cpu_ic_tag_ram.mif"]
 set_global_assignment -library "ngs_boot_core" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_jtag_uart.v"]
 set_global_assignment -library "ngs_boot_core" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ngs_boot_core_gpio.v"]
 

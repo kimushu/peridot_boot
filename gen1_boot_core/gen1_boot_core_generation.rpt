@@ -6,6 +6,8 @@ Progress: Adding boot [altera_avalon_onchip_memory2 16.1]
 Progress: Parameterizing module boot
 Progress: Adding core_clk [clock_source 16.1]
 Progress: Parameterizing module core_clk
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 16.1]
+Progress: Parameterizing module jtag_uart
 Progress: Adding nios2_fast [altera_nios2_gen2 16.1]
 Progress: Parameterizing module nios2_fast
 Progress: Adding peri_clk [clock_source 16.1]
@@ -26,6 +28,7 @@ Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Info: gen1_boot_core.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
 Info: gen1_boot_core.sdram: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
 Info: gen1_boot_core.swi: Class id is not assigned automatically. Edit the class id parameter to provide a unique number.
 Info: gen1_boot_core.swi: Time code and clock rate will be automatically updated when this component is generated.
@@ -34,22 +37,28 @@ Info: Inserting clock-crossing logic between cmd_demux.src0 and cmd_mux.sink0
 Info: Inserting clock-crossing logic between cmd_demux_001.src0 and cmd_mux.sink1
 Info: Inserting clock-crossing logic between rsp_demux.src0 and rsp_mux.sink0
 Info: Inserting clock-crossing logic between rsp_demux.src1 and rsp_mux_001.sink0
+Info: Inserting clock-crossing logic between cmd_demux.src0 and cmd_mux.sink0
+Info: Inserting clock-crossing logic between rsp_demux.src0 and rsp_mux.sink0
 Info: Interconnect is inserted between master nios2_fast.tightly_coupled_instruction_master_0 and slave boot.s1 because the master has address signal 28 bit wide, but the slave is 9 bit wide.
 Info: Interconnect is inserted between master nios2_fast.tightly_coupled_instruction_master_0 and slave boot.s1 because the master has read signal 1 bit wide, but the slave is 0 bit wide.
 Info: boot: Starting RTL generation for module 'gen1_boot_core_boot'
-Info: boot:   Generation command is [exec /opt/altera/16.1/quartus/linux64/perl/bin/perl -I /opt/altera/16.1/quartus/linux64/perl/lib -I /opt/altera/16.1/quartus/sopc_builder/bin/europa -I /opt/altera/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/16.1/quartus/sopc_builder/bin -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=gen1_boot_core_boot --dir=/tmp/alt7277_6537216887883319673.dir/0001_boot_gen/ --quartus_dir=/opt/altera/16.1/quartus --verilog --config=/tmp/alt7277_6537216887883319673.dir/0001_boot_gen//gen1_boot_core_boot_component_configuration.pl  --do_build_sim=0  ]
+Info: boot:   Generation command is [exec /opt/altera/16.1/quartus/linux64/perl/bin/perl -I /opt/altera/16.1/quartus/linux64/perl/lib -I /opt/altera/16.1/quartus/sopc_builder/bin/europa -I /opt/altera/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/16.1/quartus/sopc_builder/bin -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=gen1_boot_core_boot --dir=/tmp/alt7292_538247457375621756.dir/0001_boot_gen/ --quartus_dir=/opt/altera/16.1/quartus --verilog --config=/tmp/alt7292_538247457375621756.dir/0001_boot_gen//gen1_boot_core_boot_component_configuration.pl  --do_build_sim=0  ]
 Info: boot: Done RTL generation for module 'gen1_boot_core_boot'
 Info: boot: "gen1_boot_core" instantiated altera_avalon_onchip_memory2 "boot"
+Info: jtag_uart: Starting RTL generation for module 'gen1_boot_core_jtag_uart'
+Info: jtag_uart:   Generation command is [exec /opt/altera/16.1/quartus/linux64/perl/bin/perl -I /opt/altera/16.1/quartus/linux64/perl/lib -I /opt/altera/16.1/quartus/sopc_builder/bin/europa -I /opt/altera/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/16.1/quartus/sopc_builder/bin -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=gen1_boot_core_jtag_uart --dir=/tmp/alt7292_538247457375621756.dir/0002_jtag_uart_gen/ --quartus_dir=/opt/altera/16.1/quartus --verilog --config=/tmp/alt7292_538247457375621756.dir/0002_jtag_uart_gen//gen1_boot_core_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart: Done RTL generation for module 'gen1_boot_core_jtag_uart'
+Info: jtag_uart: "gen1_boot_core" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: nios2_fast: "gen1_boot_core" instantiated altera_nios2_gen2 "nios2_fast"
 Info: peridot_host: "gen1_boot_core" instantiated peridot_avalon_bridge "peridot_host"
 Info: peripheral_bridge: "gen1_boot_core" instantiated altera_avalon_mm_bridge "peripheral_bridge"
 Info: sdram: Starting RTL generation for module 'gen1_boot_core_sdram'
-Info: sdram:   Generation command is [exec /opt/altera/16.1/quartus/linux64/perl/bin/perl -I /opt/altera/16.1/quartus/linux64/perl/lib -I /opt/altera/16.1/quartus/sopc_builder/bin/europa -I /opt/altera/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/16.1/quartus/sopc_builder/bin -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=gen1_boot_core_sdram --dir=/tmp/alt7277_6537216887883319673.dir/0004_sdram_gen/ --quartus_dir=/opt/altera/16.1/quartus --verilog --config=/tmp/alt7277_6537216887883319673.dir/0004_sdram_gen//gen1_boot_core_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram:   Generation command is [exec /opt/altera/16.1/quartus/linux64/perl/bin/perl -I /opt/altera/16.1/quartus/linux64/perl/lib -I /opt/altera/16.1/quartus/sopc_builder/bin/europa -I /opt/altera/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/16.1/quartus/sopc_builder/bin -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=gen1_boot_core_sdram --dir=/tmp/alt7292_538247457375621756.dir/0005_sdram_gen/ --quartus_dir=/opt/altera/16.1/quartus --verilog --config=/tmp/alt7292_538247457375621756.dir/0005_sdram_gen//gen1_boot_core_sdram_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram: Done RTL generation for module 'gen1_boot_core_sdram'
 Info: sdram: "gen1_boot_core" instantiated altera_avalon_new_sdram_controller "sdram"
 Info: swi: "gen1_boot_core" instantiated peridot_swi "swi"
 Info: systimer: Starting RTL generation for module 'gen1_boot_core_systimer'
-Info: systimer:   Generation command is [exec /opt/altera/16.1/quartus/linux64//perl/bin/perl -I /opt/altera/16.1/quartus/linux64//perl/lib -I /opt/altera/16.1/quartus/sopc_builder/bin/europa -I /opt/altera/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/16.1/quartus/sopc_builder/bin -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=gen1_boot_core_systimer --dir=/tmp/alt7277_6537216887883319673.dir/0006_systimer_gen/ --quartus_dir=/opt/altera/16.1/quartus --verilog --config=/tmp/alt7277_6537216887883319673.dir/0006_systimer_gen//gen1_boot_core_systimer_component_configuration.pl  --do_build_sim=0  ]
+Info: systimer:   Generation command is [exec /opt/altera/16.1/quartus/linux64//perl/bin/perl -I /opt/altera/16.1/quartus/linux64//perl/lib -I /opt/altera/16.1/quartus/sopc_builder/bin/europa -I /opt/altera/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/16.1/quartus/sopc_builder/bin -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=gen1_boot_core_systimer --dir=/tmp/alt7292_538247457375621756.dir/0007_systimer_gen/ --quartus_dir=/opt/altera/16.1/quartus --verilog --config=/tmp/alt7292_538247457375621756.dir/0007_systimer_gen//gen1_boot_core_systimer_component_configuration.pl  --do_build_sim=0  ]
 Info: systimer: Done RTL generation for module 'gen1_boot_core_systimer'
 Info: systimer: "gen1_boot_core" instantiated altera_avalon_timer "systimer"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -59,34 +68,35 @@ Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "gen1_boot_core" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_1: "gen1_boot_core" instantiated altera_mm_interconnect "mm_interconnect_1"
 Info: mm_interconnect_2: "gen1_boot_core" instantiated altera_mm_interconnect "mm_interconnect_2"
 Info: irq_mapper: "gen1_boot_core" instantiated altera_irq_mapper "irq_mapper"
 Info: irq_synchronizer: "gen1_boot_core" instantiated altera_irq_clock_crosser "irq_synchronizer"
 Info: rst_controller: "gen1_boot_core" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'gen1_boot_core_nios2_fast_cpu'
-Info: cpu:   Generation command is [exec /opt/altera/16.1/quartus/linux64//eperlcmd -I /opt/altera/16.1/quartus/linux64//perl/lib -I /opt/altera/16.1/quartus/sopc_builder/bin/europa -I /opt/altera/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/16.1/quartus/sopc_builder/bin -I /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=gen1_boot_core_nios2_fast_cpu --dir=/tmp/alt7277_6537216887883319673.dir/0010_cpu_gen/ --quartus_bindir=/opt/altera/16.1/quartus/linux64/ --verilog --config=/tmp/alt7277_6537216887883319673.dir/0010_cpu_gen//gen1_boot_core_nios2_fast_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2017.04.21 15:03:48 (*) Starting Nios II generation
-Info: cpu: # 2017.04.21 15:03:48 (*)   Checking for plaintext license.
-Info: cpu: # 2017.04.21 15:03:52 (*)   Plaintext license not found.
-Info: cpu: # 2017.04.21 15:03:52 (*)   Checking for encrypted license (non-evaluation).
-Info: cpu: # 2017.04.21 15:03:52 (*)   Encrypted license found.  SOF will not be time-limited.
-Info: cpu: # 2017.04.21 15:03:52 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2017.04.21 15:03:52 (*)   Creating all objects for CPU
-Info: cpu: # 2017.04.21 15:03:52 (*)     Testbench
-Info: cpu: # 2017.04.21 15:03:53 (*)     Instruction decoding
-Info: cpu: # 2017.04.21 15:03:53 (*)       Instruction fields
-Info: cpu: # 2017.04.21 15:03:53 (*)       Instruction decodes
-Info: cpu: # 2017.04.21 15:03:53 (*)       Signals for RTL simulation waveforms
-Info: cpu: # 2017.04.21 15:03:53 (*)       Instruction controls
-Info: cpu: # 2017.04.21 15:03:53 (*)     Pipeline frontend
-Info: cpu: # 2017.04.21 15:03:53 (*)   Master tightly_coupled_instruction_master_0 address range (0xf000000, 0xf0007ff) overlaps with master instruction_master address range (0x0, 0xfffffff)
-Info: cpu: # 2017.04.21 15:03:53 (*)   Master instruction_master address range (0x0, 0xfffffff) overlaps with master tightly_coupled_instruction_master_0 address range (0xf000000, 0xf0007ff)
-Info: cpu: # 2017.04.21 15:03:53 (*)   Generating non-optimal tightly-coupled master logic due to overlap
-Info: cpu: # 2017.04.21 15:03:53 (*)     Pipeline backend
-Info: cpu: # 2017.04.21 15:03:56 (*)   Generating RTL from CPU objects
-Info: cpu: # 2017.04.21 15:03:57 (*)   Creating encrypted RTL
-Info: cpu: # 2017.04.21 15:04:06 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec /opt/altera/16.1/quartus/linux64//eperlcmd -I /opt/altera/16.1/quartus/linux64//perl/lib -I /opt/altera/16.1/quartus/sopc_builder/bin/europa -I /opt/altera/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/16.1/quartus/sopc_builder/bin -I /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=gen1_boot_core_nios2_fast_cpu --dir=/tmp/alt7292_538247457375621756.dir/0011_cpu_gen/ --quartus_bindir=/opt/altera/16.1/quartus/linux64/ --verilog --config=/tmp/alt7292_538247457375621756.dir/0011_cpu_gen//gen1_boot_core_nios2_fast_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2017.05.06 16:01:32 (*) Starting Nios II generation
+Info: cpu: # 2017.05.06 16:01:32 (*)   Checking for plaintext license.
+Info: cpu: # 2017.05.06 16:01:33 (*)   Plaintext license not found.
+Info: cpu: # 2017.05.06 16:01:33 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2017.05.06 16:01:33 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: cpu: # 2017.05.06 16:01:33 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2017.05.06 16:01:33 (*)   Creating all objects for CPU
+Info: cpu: # 2017.05.06 16:01:33 (*)     Testbench
+Info: cpu: # 2017.05.06 16:01:34 (*)     Instruction decoding
+Info: cpu: # 2017.05.06 16:01:34 (*)       Instruction fields
+Info: cpu: # 2017.05.06 16:01:34 (*)       Instruction decodes
+Info: cpu: # 2017.05.06 16:01:34 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2017.05.06 16:01:34 (*)       Instruction controls
+Info: cpu: # 2017.05.06 16:01:34 (*)     Pipeline frontend
+Info: cpu: # 2017.05.06 16:01:34 (*)   Master tightly_coupled_instruction_master_0 address range (0xf000000, 0xf0007ff) overlaps with master instruction_master address range (0x0, 0xfffffff)
+Info: cpu: # 2017.05.06 16:01:34 (*)   Master instruction_master address range (0x0, 0xfffffff) overlaps with master tightly_coupled_instruction_master_0 address range (0xf000000, 0xf0007ff)
+Info: cpu: # 2017.05.06 16:01:34 (*)   Generating non-optimal tightly-coupled master logic due to overlap
+Info: cpu: # 2017.05.06 16:01:34 (*)     Pipeline backend
+Info: cpu: # 2017.05.06 16:01:36 (*)   Generating RTL from CPU objects
+Info: cpu: # 2017.05.06 16:01:38 (*)   Creating encrypted RTL
+Info: cpu: # 2017.05.06 16:01:39 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'gen1_boot_core_nios2_fast_cpu'
 Info: cpu: "nios2_fast" instantiated altera_nios2_gen2_unit "cpu"
 Info: peridot_host_avalon_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "peridot_host_avalon_master_translator"
@@ -133,10 +143,11 @@ Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "c
 Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: Reusing file /home/shuta/projects/peridot_boot/gen1_boot_core/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_001: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux_001"
 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file /home/shuta/projects/peridot_boot/gen1_boot_core/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
-Info: gen1_boot_core: Done "gen1_boot_core" with 52 modules, 88 files
+Info: gen1_boot_core: Done "gen1_boot_core" with 54 modules, 90 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

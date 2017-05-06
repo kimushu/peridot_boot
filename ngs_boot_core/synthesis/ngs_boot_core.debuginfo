@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="ngs_boot_core" kind="system" version="16.1" fabric="QSYS">
  <!-- Format version 16.1 203 (Future versions may contain additional information.) -->
- <!-- 2017.03.10.04:36:27 -->
+ <!-- 2017.05.06.15:31:28 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1489088162</value>
+  <value>1494052269</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -5787,7 +5787,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1489088162</value>
+   <value>1494052269</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.USE_EPCSBOOT</name>
@@ -5843,7 +5843,7 @@ the requested settings for a module instance. -->
    <type>java.lang.String</type>
    <value>DISABLE</value>
    <derived>true</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
@@ -5859,7 +5859,7 @@ the requested settings for a module instance. -->
    <type>java.lang.String</type>
    <value>ENABLE</value>
    <derived>true</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
@@ -5875,7 +5875,7 @@ the requested settings for a module instance. -->
    <type>java.lang.String</type>
    <value>ENABLE</value>
    <derived>true</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
@@ -5923,7 +5923,7 @@ the requested settings for a module instance. -->
    <type>int</type>
    <value>5000000</value>
    <derived>true</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
@@ -5939,7 +5939,7 @@ the requested settings for a module instance. -->
    <type>int</type>
    <value>9</value>
    <derived>true</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
@@ -5947,7 +5947,7 @@ the requested settings for a module instance. -->
    <type>int</type>
    <value>13</value>
    <derived>true</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
@@ -5955,7 +5955,7 @@ the requested settings for a module instance. -->
    <type>java.lang.String</type>
    <value>ENABLE</value>
    <derived>true</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
@@ -5971,7 +5971,7 @@ the requested settings for a module instance. -->
    <type>java.lang.String</type>
    <value>ENABLE</value>
    <derived>true</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
@@ -5987,7 +5987,7 @@ the requested settings for a module instance. -->
    <type>java.lang.String</type>
    <value>ENABLE</value>
    <derived>true</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
@@ -6009,7 +6009,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="SWI_TIMECODE">
    <type>int</type>
-   <value>1489088162</value>
+   <value>1494052269</value>
    <derived>false</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -21737,5 +21737,5 @@ parameters are a RESULT of the module parameters. -->
   <version>16.1</version>
  </plugin>
  <reportVersion>16.1 203</reportVersion>
- <uniqueIdentifier>5A763FECF81D0000015AB4923A64</uniqueIdentifier>
+ <uniqueIdentifier>000C29D68C730000015BDC747BF2</uniqueIdentifier>
 </EnsembleReport>

@@ -47,7 +47,7 @@ module gen1_boot_core_mm_interconnect_0 (
 		output wire [3:0]  nios2_fast_debug_mem_slave_byteenable,               //                                              .byteenable
 		input  wire        nios2_fast_debug_mem_slave_waitrequest,              //                                              .waitrequest
 		output wire        nios2_fast_debug_mem_slave_debugaccess,              //                                              .debugaccess
-		output wire [5:0]  peripheral_bridge_s0_address,                        //                          peripheral_bridge_s0.address
+		output wire [6:0]  peripheral_bridge_s0_address,                        //                          peripheral_bridge_s0.address
 		output wire        peripheral_bridge_s0_write,                          //                                              .write
 		output wire        peripheral_bridge_s0_read,                           //                                              .read
 		input  wire [31:0] peripheral_bridge_s0_readdata,                       //                                              .readdata
@@ -682,7 +682,7 @@ module gen1_boot_core_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (6),
+		.AV_ADDRESS_W                   (7),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),

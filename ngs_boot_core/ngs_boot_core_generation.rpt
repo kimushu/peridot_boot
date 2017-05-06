@@ -1,0 +1,152 @@
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/shuta/projects/peridot_boot/ngs_boot_core.qsys --synthesis=VERILOG --output-directory=/home/shuta/projects/peridot_boot/ngs_boot_core/synthesis --family="MAX 10" --part=10M08SAE144C8G
+Progress: Loading peridot_boot/ngs_boot_core.qsys
+Progress: Reading input file
+Progress: Adding core_clk [clock_source 16.1]
+Progress: Parameterizing module core_clk
+Progress: Adding gpio [altera_avalon_pio 16.1]
+Progress: Parameterizing module gpio
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 16.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding nios2_fast [altera_nios2_gen2 16.1]
+Progress: Parameterizing module nios2_fast
+Progress: Adding peri_clk [clock_source 16.1]
+Progress: Parameterizing module peri_clk
+Progress: Adding peridot_hostbridge [peridot_hostbridge 16.1]
+Progress: Parameterizing module peridot_hostbridge
+Progress: Adding peripheral_bridge [altera_avalon_mm_bridge 16.1]
+Progress: Parameterizing module peripheral_bridge
+Progress: Adding sdram [altera_avalon_new_sdram_controller 16.1]
+Progress: Parameterizing module sdram
+Progress: Adding systimer [altera_avalon_timer 16.1]
+Progress: Parameterizing module systimer
+Progress: Adding ufm [altera_onchip_flash 16.1]
+Progress: Parameterizing module ufm
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: ngs_boot_core.gpio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ngs_boot_core.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: ngs_boot_core.peridot_hostbridge: Time code and clock rate will be automatically updated when this component is generated.
+Info: ngs_boot_core.sdram: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: ngs_boot_core: Generating ngs_boot_core "ngs_boot_core" for QUARTUS_SYNTH
+Info: Inserting clock-crossing logic between cmd_demux.src2 and cmd_mux_002.sink0
+Info: Inserting clock-crossing logic between cmd_demux_001.src1 and cmd_mux_002.sink1
+Info: Inserting clock-crossing logic between rsp_demux_002.src0 and rsp_mux.sink2
+Info: Inserting clock-crossing logic between rsp_demux_002.src1 and rsp_mux_001.sink1
+Info: Inserting clock-crossing logic between cmd_demux.src0 and cmd_mux.sink0
+Info: Inserting clock-crossing logic between cmd_demux.src1 and cmd_mux_001.sink0
+Info: Inserting clock-crossing logic between rsp_demux.src0 and rsp_mux.sink0
+Info: Inserting clock-crossing logic between rsp_demux_001.src0 and rsp_mux.sink1
+Info: gpio: Starting RTL generation for module 'ngs_boot_core_gpio'
+Info: gpio:   Generation command is [exec /opt/altera/16.1/quartus/linux64/perl/bin/perl -I /opt/altera/16.1/quartus/linux64/perl/lib -I /opt/altera/16.1/quartus/sopc_builder/bin/europa -I /opt/altera/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/16.1/quartus/sopc_builder/bin -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=ngs_boot_core_gpio --dir=/tmp/alt7292_6660034789843728978.dir/0048_gpio_gen/ --quartus_dir=/opt/altera/16.1/quartus --verilog --config=/tmp/alt7292_6660034789843728978.dir/0048_gpio_gen//ngs_boot_core_gpio_component_configuration.pl  --do_build_sim=0  ]
+Info: gpio: Done RTL generation for module 'ngs_boot_core_gpio'
+Info: gpio: "ngs_boot_core" instantiated altera_avalon_pio "gpio"
+Info: jtag_uart: Starting RTL generation for module 'ngs_boot_core_jtag_uart'
+Info: jtag_uart:   Generation command is [exec /opt/altera/16.1/quartus/linux64/perl/bin/perl -I /opt/altera/16.1/quartus/linux64/perl/lib -I /opt/altera/16.1/quartus/sopc_builder/bin/europa -I /opt/altera/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/16.1/quartus/sopc_builder/bin -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=ngs_boot_core_jtag_uart --dir=/tmp/alt7292_6660034789843728978.dir/0049_jtag_uart_gen/ --quartus_dir=/opt/altera/16.1/quartus --verilog --config=/tmp/alt7292_6660034789843728978.dir/0049_jtag_uart_gen//ngs_boot_core_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart: Done RTL generation for module 'ngs_boot_core_jtag_uart'
+Info: jtag_uart: "ngs_boot_core" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: nios2_fast: "ngs_boot_core" instantiated altera_nios2_gen2 "nios2_fast"
+Info: peridot_hostbridge: generating top-level entity peridot_hostbridge
+Info: peridot_hostbridge: "ngs_boot_core" instantiated peridot_hostbridge "peridot_hostbridge"
+Info: peripheral_bridge: "ngs_boot_core" instantiated altera_avalon_mm_bridge "peripheral_bridge"
+Info: sdram: Starting RTL generation for module 'ngs_boot_core_sdram'
+Info: sdram:   Generation command is [exec /opt/altera/16.1/quartus/linux64/perl/bin/perl -I /opt/altera/16.1/quartus/linux64/perl/lib -I /opt/altera/16.1/quartus/sopc_builder/bin/europa -I /opt/altera/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/16.1/quartus/sopc_builder/bin -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=ngs_boot_core_sdram --dir=/tmp/alt7292_6660034789843728978.dir/0052_sdram_gen/ --quartus_dir=/opt/altera/16.1/quartus --verilog --config=/tmp/alt7292_6660034789843728978.dir/0052_sdram_gen//ngs_boot_core_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram: Done RTL generation for module 'ngs_boot_core_sdram'
+Info: sdram: "ngs_boot_core" instantiated altera_avalon_new_sdram_controller "sdram"
+Info: systimer: Starting RTL generation for module 'ngs_boot_core_systimer'
+Info: systimer:   Generation command is [exec /opt/altera/16.1/quartus/linux64//perl/bin/perl -I /opt/altera/16.1/quartus/linux64//perl/lib -I /opt/altera/16.1/quartus/sopc_builder/bin/europa -I /opt/altera/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/16.1/quartus/sopc_builder/bin -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- /opt/altera/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=ngs_boot_core_systimer --dir=/tmp/alt7292_6660034789843728978.dir/0053_systimer_gen/ --quartus_dir=/opt/altera/16.1/quartus --verilog --config=/tmp/alt7292_6660034789843728978.dir/0053_systimer_gen//ngs_boot_core_systimer_component_configuration.pl  --do_build_sim=0  ]
+Info: systimer: Done RTL generation for module 'ngs_boot_core_systimer'
+Info: systimer: "ngs_boot_core" instantiated altera_avalon_timer "systimer"
+Info: ufm: Generating top-level entity altera_onchip_flash
+Info: ufm: "ngs_boot_core" instantiated altera_onchip_flash "ufm"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "ngs_boot_core" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_1: "ngs_boot_core" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: irq_mapper: "ngs_boot_core" instantiated altera_irq_mapper "irq_mapper"
+Info: irq_synchronizer: "ngs_boot_core" instantiated altera_irq_clock_crosser "irq_synchronizer"
+Info: rst_controller: "ngs_boot_core" instantiated altera_reset_controller "rst_controller"
+Info: cpu: Starting RTL generation for module 'ngs_boot_core_nios2_fast_cpu'
+Info: cpu:   Generation command is [exec /opt/altera/16.1/quartus/linux64//eperlcmd -I /opt/altera/16.1/quartus/linux64//perl/lib -I /opt/altera/16.1/quartus/sopc_builder/bin/europa -I /opt/altera/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/16.1/quartus/sopc_builder/bin -I /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /opt/altera/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=ngs_boot_core_nios2_fast_cpu --dir=/tmp/alt7292_6660034789843728978.dir/0058_cpu_gen/ --quartus_bindir=/opt/altera/16.1/quartus/linux64/ --verilog --config=/tmp/alt7292_6660034789843728978.dir/0058_cpu_gen//ngs_boot_core_nios2_fast_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2017.05.06 15:31:19 (*) Starting Nios II generation
+Info: cpu: # 2017.05.06 15:31:19 (*)   Checking for plaintext license.
+Info: cpu: # 2017.05.06 15:31:20 (*)   Plaintext license not found.
+Info: cpu: # 2017.05.06 15:31:20 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2017.05.06 15:31:21 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: cpu: # 2017.05.06 15:31:21 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2017.05.06 15:31:21 (*)   Creating all objects for CPU
+Info: cpu: # 2017.05.06 15:31:21 (*)     Testbench
+Info: cpu: # 2017.05.06 15:31:21 (*)     Instruction decoding
+Info: cpu: # 2017.05.06 15:31:21 (*)       Instruction fields
+Info: cpu: # 2017.05.06 15:31:21 (*)       Instruction decodes
+Info: cpu: # 2017.05.06 15:31:22 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2017.05.06 15:31:22 (*)       Instruction controls
+Info: cpu: # 2017.05.06 15:31:22 (*)     Pipeline frontend
+Info: cpu: # 2017.05.06 15:31:22 (*)     Pipeline backend
+Info: cpu: # 2017.05.06 15:31:25 (*)   Generating RTL from CPU objects
+Info: cpu: # 2017.05.06 15:31:27 (*)   Creating encrypted RTL
+Info: cpu: # 2017.05.06 15:31:28 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'ngs_boot_core_nios2_fast_cpu'
+Info: cpu: "nios2_fast" instantiated altera_nios2_gen2_unit "cpu"
+Info: nios2_fast_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios2_fast_data_master_translator"
+Info: ufm_data_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "ufm_data_translator"
+Info: nios2_fast_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "nios2_fast_data_master_agent"
+Info: ufm_data_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "ufm_data_agent"
+Info: ufm_data_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "ufm_data_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
+Info: router_006: "mm_interconnect_0" instantiated altera_merlin_router "router_006"
+Info: nios2_fast_data_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "nios2_fast_data_master_limiter"
+Info: Reusing file /home/shuta/projects/peridot_boot/ngs_boot_core/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: sdram_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sdram_s1_burst_adapter"
+Info: Reusing file /home/shuta/projects/peridot_boot/ngs_boot_core/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_003"
+Info: Reusing file /home/shuta/projects/peridot_boot/ngs_boot_core/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_002"
+Info: rsp_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_003"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/shuta/projects/peridot_boot/ngs_boot_core/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file /home/shuta/projects/peridot_boot/ngs_boot_core/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
+Info: Reusing file /home/shuta/projects/peridot_boot/ngs_boot_core/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: sdram_s1_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "sdram_s1_rsp_width_adapter"
+Info: Reusing file /home/shuta/projects/peridot_boot/ngs_boot_core/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file /home/shuta/projects/peridot_boot/ngs_boot_core/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
+Info: Reusing file /home/shuta/projects/peridot_boot/ngs_boot_core/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: avalon_st_adapter_003: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_003"
+Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_1" instantiated altera_merlin_router "router_001"
+Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file /home/shuta/projects/peridot_boot/ngs_boot_core/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: cmd_mux_002: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux_002"
+Info: Reusing file /home/shuta/projects/peridot_boot/ngs_boot_core/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_002: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux_002"
+Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/shuta/projects/peridot_boot/ngs_boot_core/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter_003" instantiated error_adapter "error_adapter_0"
+Info: ngs_boot_core: Done "ngs_boot_core" with 53 modules, 106 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
