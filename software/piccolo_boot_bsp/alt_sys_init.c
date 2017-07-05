@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_fast' in SOPC Builder design 'ngs_boot_core'
  * SOPC Builder design path: ../../ngs_boot_core.sopcinfo
  *
- * Generated: Wed May 03 14:46:53 JST 2017
+ * Generated: Wed Jul 05 12:20:48 JST 2017
  */
 
 /*

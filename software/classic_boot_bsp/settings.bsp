@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2017/05/06 16:13:03</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1494054783546</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>/home/shuta/projects/peridot_boot/software/classic_boot_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>2017/07/05 12:28:38</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1499225318984</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>D:\Works\Altera\peridot_boot\software\classic_boot_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
-        <SopcDesignFile>../../gen1_boot_core.sopcinfo</SopcDesignFile>
+        <SopcDesignFile>..\..\gen1_boot_core.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>nios2_fast</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
