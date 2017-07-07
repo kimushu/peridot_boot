@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2017/07/07 14:05:58</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1499403958206</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2017/07/07 17:59:50</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1499417990073</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\Works\Altera\peridot_boot\software\classic_boot_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\gen1_boot_core.sopcinfo</SopcDesignFile>
