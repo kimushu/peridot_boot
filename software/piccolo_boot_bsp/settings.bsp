@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2017/07/05 12:37:23</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1499225843790</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2017/07/07 12:16:40</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1499397400368</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\Works\Altera\peridot_boot\software\piccolo_boot_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\ngs_boot_core.sopcinfo</SopcDesignFile>
@@ -1079,18 +1079,6 @@
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
         <Setting>
-                <SettingName>peridot_swi_driver.flash_boot.after_cfg</SettingName>
-                <Identifier>SWI_FLASH_BOOT_AFTER_CFG</Identifier>
-                <Type>BooleanDefineOnly</Type>
-                <Value>false</Value>
-                <DefaultValue>0</DefaultValue>
-                <DestinationFile>system_h_define</DestinationFile>
-                <Description>Load ELF image after FPGA configuration data</Description>
-                <Restrictions>none</Restrictions>
-                <Enabled>false</Enabled>
-                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-        </Setting>
-        <Setting>
                 <SettingName>peridot_swi_driver.flash_boot.offset</SettingName>
                 <Identifier>SWI_FLASH_BOOT_OFFSET</Identifier>
                 <Type>HexNumber</Type>
@@ -1113,6 +1101,18 @@
                 <Restrictions>none</Restrictions>
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>peridot_swi_driver.flash_boot.after_cfg</SettingName>
+                <Identifier>peridot_swi_driver_SWI_FLASH_BOOT_AFTER_CFG</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>0</Value>
+                <DefaultValue>0</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Load ELF image after FPGA configuration data</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group>module_setting</Group>
         </Setting>
         <Setting>
                 <SettingName>altera_avalon_jtag_uart_driver.enable_small_driver</SettingName>
