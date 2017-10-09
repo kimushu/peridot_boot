@@ -142,7 +142,8 @@ ACDS_VERSION := 16.1
 ELF := piccolo_boot.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := main.c
+C_SRCS += main.c
+C_SRCS += rubic_fwup.c
 CXX_SRCS :=
 ASM_SRCS :=
 
