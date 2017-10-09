@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2017/10/09 1:32:17</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1507480337168</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2017/10/09 13:15:43</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1507522543214</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\Works\Altera\peridot_boot\software\piccolo_boot_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\ngs_boot_core.sopcinfo</SopcDesignFile>
@@ -1018,6 +1018,38 @@
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
+        <LinkerRegion>
+                <regionName>reset</regionName>
+                <memoryName>sdram</memoryName>
+                <offset>0</offset>
+                <size>32</size>
+                <baseAddress>0x0</baseAddress>
+                <addressRange>0x00000000 - 0x0000001F</addressRange>
+        </LinkerRegion>
+        <LinkerRegion>
+                <regionName>sdram</regionName>
+                <memoryName>sdram</memoryName>
+                <offset>32</offset>
+                <size>6291424</size>
+                <baseAddress>0x20</baseAddress>
+                <addressRange>0x00000020 - 0x005FFFFF</addressRange>
+        </LinkerRegion>
+        <LinkerRegion>
+                <regionName>message</regionName>
+                <memoryName>sdram</memoryName>
+                <offset>6291456</offset>
+                <size>2097152</size>
+                <baseAddress>0x600000</baseAddress>
+                <addressRange>0x00600000 - 0x007FFFFF</addressRange>
+        </LinkerRegion>
+        <LinkerRegion>
+                <regionName>ufm_data</regionName>
+                <memoryName>ufm_data</memoryName>
+                <offset>0</offset>
+                <size>176128</size>
+                <baseAddress>0xf800000</baseAddress>
+                <addressRange>0x0F800000 - 0x0F82AFFF</addressRange>
+        </LinkerRegion>
         <MemoryMap>
                 <slaveDescriptor>sdram</slaveDescriptor>
                 <addressRange>0x00000000 - 0x007FFFFF</addressRange>

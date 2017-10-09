@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_fast' in SOPC Builder design 'ngs_boot_core'
  * SOPC Builder design path: ../../ngs_boot_core.sopcinfo
  *
- * Generated: Mon Oct 09 01:02:15 JST 2017
+ * Generated: Mon Oct 09 13:15:45 JST 2017
  */
 
 /*
@@ -65,10 +65,12 @@
  *
  */
 
+#define MESSAGE_REGION_BASE 0x600000
+#define MESSAGE_REGION_SPAN 2097152
 #define RESET_REGION_BASE 0x0
 #define RESET_REGION_SPAN 32
 #define SDRAM_REGION_BASE 0x20
-#define SDRAM_REGION_SPAN 8388576
+#define SDRAM_REGION_SPAN 6291424
 #define UFM_DATA_REGION_BASE 0xf800000
 #define UFM_DATA_REGION_SPAN 176128
 

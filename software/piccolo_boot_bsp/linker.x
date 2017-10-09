@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_fast' in SOPC Builder design 'ngs_boot_core'
  * SOPC Builder design path: ../../ngs_boot_core.sopcinfo
  *
- * Generated: Mon Oct 09 01:02:15 JST 2017
+ * Generated: Mon Oct 09 13:15:45 JST 2017
  */
 
 /*
@@ -51,7 +51,8 @@
 MEMORY
 {
     reset : ORIGIN = 0x0, LENGTH = 32
-    sdram : ORIGIN = 0x20, LENGTH = 8388576
+    sdram : ORIGIN = 0x20, LENGTH = 6291424
+    message : ORIGIN = 0x600000, LENGTH = 2097152
     ufm_data : ORIGIN = 0xf800000, LENGTH = 176128
 }
 
@@ -346,7 +347,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0x800000;
+__alt_data_end = 0x600000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -362,4 +363,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0x800000 );
+PROVIDE( __alt_heap_limit    = 0x600000 );
