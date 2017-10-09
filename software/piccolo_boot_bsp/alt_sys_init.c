@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_fast' in SOPC Builder design 'ngs_boot_core'
  * SOPC Builder design path: ../../ngs_boot_core.sopcinfo
  *
- * Generated: Wed Jul 05 12:20:48 JST 2017
+ * Generated: Mon Oct 09 01:24:34 JST 2017
  */
 
 /*
@@ -59,26 +59,20 @@
  */
 
 #include "altera_nios2_gen2_irq.h"
-#include "altera_avalon_jtag_uart.h"
 #include "altera_avalon_timer.h"
 #include "altera_onchip_flash.h"
 #include "flash_writer.h"
-#include "peridot_client_fs.h"
 #include "peridot_hostbridge.h"
-#include "peridot_rpc_server.h"
 
 /*
  * Allocate the device storage
  */
 
 ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( NIOS2_FAST, nios2_fast);
-ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART, jtag_uart);
 ALTERA_AVALON_TIMER_INSTANCE ( SYSTIMER, systimer);
 ALTERA_ONCHIP_FLASH_DATA_CSR_INSTANCE ( UFM, UFM_DATA, UFM_CSR, ufm);
 FLASH_WRITER_INSTANCE ( FLASH_WRITER, flash_writer);
-PERIDOT_CLIENT_FS_INSTANCE ( PERIDOT_CLIENT_FS, peridot_client_fs);
 PERIDOT_HOSTBRIDGE_INSTANCE ( PERIDOT_HOSTBRIDGE, peridot_hostbridge);
-PERIDOT_RPC_SERVER_INSTANCE ( PERIDOT_RPC_SERVER, peridot_rpc_server);
 
 /*
  * Initialize the interrupt controller devices
@@ -102,10 +96,7 @@ void alt_irq_init ( const void* base )
 void alt_sys_init( void )
 {
     ALTERA_AVALON_TIMER_INIT ( SYSTIMER, systimer);
-    ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART, jtag_uart);
     ALTERA_ONCHIP_FLASH_INIT ( UFM, ufm);
     PERIDOT_HOSTBRIDGE_INIT ( PERIDOT_HOSTBRIDGE, peridot_hostbridge);
     FLASH_WRITER_INIT ( FLASH_WRITER, flash_writer);
-    PERIDOT_RPC_SERVER_INIT ( PERIDOT_RPC_SERVER, peridot_rpc_server);
-    PERIDOT_CLIENT_FS_INIT ( PERIDOT_CLIENT_FS, peridot_client_fs);
 }

@@ -7,12 +7,7 @@
 
 static peridot_swi_state *swi_sp;
 
-#ifdef SWI_FLASH_BOOT_ENABLE
-/* This dummy variable prevents linker from dropping startup sections */
-extern int __reset_swi;
-__attribute__((used)) static const void *peridot_swi_dummy = &__reset_swi;
-#endif  /* SWI_FLASH_BOOT_ENABLE */
-
+#if (PERIDOT_SWI_USE_MESSAGE)
 #ifdef ALT_ENHANCED_INTERRUPT_API_PRESENT
 static void peridot_swi_irq(void *context)
 #else
@@ -29,14 +24,17 @@ static void peridot_swi_irq(void *context, alt_u32 id)
     (*sp->isr)(sp->param);
   }
 }
+#endif  /* PERIDOT_SWI_USE_MESSAGE */
 
 void peridot_swi_init(peridot_swi_state *sp,
-                      alt_u32 irq_controller_id, alt_u32 irq,
-                      peridot_swi_flash_dev *flash_dev,
-                      const char *flash_name)
+                      alt_u32 irq_controller_id, alt_u32 irq
+                      PERIDOT_SPI_FLASH_INIT_ARGS)
 {
   swi_sp = sp;
+  (void)irq_controller_id;
+  (void)irq;
 
+#if (PERIDOT_SWI_USE_MESSAGE)
   if (!PERIDOT_SWI_HAS_MSGSWI(swi_sp->base)) {
     return;
   }
@@ -44,13 +42,11 @@ void peridot_swi_init(peridot_swi_state *sp,
 #ifdef ALT_ENHANCED_INTERRUPT_API_PRESENT
   alt_ic_isr_register(irq_controller_id, irq, peridot_swi_irq, sp, NULL);
 #else
-  (void)irq_controller_id;
   alt_irq_register(irq, sp, peridot_swi_irq);
 #endif
+#endif  /* PERIDOT_SWI_USE_MESSAGE */
 
-  if (flash_dev) {
-    peridot_swi_flash_init(flash_dev, flash_name);
-  }
+  PERIDOT_SPI_FLASH_INIT_CALL();
 }
 
 int peridot_swi_set_led(alt_u32 value)
@@ -94,6 +90,7 @@ int peridot_swi_reset_cpu(alt_u32 key)
   for (;;);
 }
 
+#if (PERIDOT_SWI_USE_MESSAGE)
 int peridot_swi_set_handler(void (*isr)(void *), void *param)
 {
   if (!swi_sp)
@@ -146,7 +143,9 @@ int peridot_swi_read_message(alt_u32 *value)
   *value = IORD_PERIDOT_SWI_MESSAGE(base);
   return 0;
 }
+#endif  /* PERIDOT_SWI_USE_MESSAGE */
 
+#if (PERIDOT_SWI_USE_EPCS)
 int peridot_swi_flash_command(alt_u32 write_length, const alt_u8 *write_data,
                               alt_u32 read_length, alt_u8 *read_data,
                               alt_u32 flags)
@@ -193,11 +192,11 @@ int peridot_swi_flash_command(alt_u32 write_length, const alt_u8 *write_data,
                     PERIDOT_SWI_FLASH_RXDATA_OFST;
   }
 
-  if ((flags & PERIDOT_SWI_FLASH_COMMAND_MERGE) == 0)
+  if ((flags & PERIDOT_SWI_FLASH_MERGE) == 0)
   {
     IOWR_PERIDOT_SWI_FLASH(base, 0);
   }
 
   return 0;
 }
-
+#endif  /* PERIDOT_SWI_USE_EPCS */

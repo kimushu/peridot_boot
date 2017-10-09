@@ -208,17 +208,6 @@ GENERATED_C_LIB_SRCS += alt_sys_init.c
 # used to build each file.
 #-------------------------------------------------------------------------------
 
-# altera_avalon_jtag_uart_driver sources root 
-altera_avalon_jtag_uart_driver_SRCS_ROOT := drivers
-
-# altera_avalon_jtag_uart_driver sources 
-altera_avalon_jtag_uart_driver_C_LIB_SRCS := \
-	$(altera_avalon_jtag_uart_driver_SRCS_ROOT)/src/altera_avalon_jtag_uart_init.c \
-	$(altera_avalon_jtag_uart_driver_SRCS_ROOT)/src/altera_avalon_jtag_uart_read.c \
-	$(altera_avalon_jtag_uart_driver_SRCS_ROOT)/src/altera_avalon_jtag_uart_write.c \
-	$(altera_avalon_jtag_uart_driver_SRCS_ROOT)/src/altera_avalon_jtag_uart_ioctl.c \
-	$(altera_avalon_jtag_uart_driver_SRCS_ROOT)/src/altera_avalon_jtag_uart_fd.c
-
 # altera_avalon_pio_driver sources root 
 altera_avalon_pio_driver_SRCS_ROOT := drivers
 
@@ -345,43 +334,25 @@ hal_C_LIB_SRCS := \
 	$(hal_SRCS_ROOT)/src/alt_wait.c \
 	$(hal_SRCS_ROOT)/src/alt_write.c
 
-# peridot_client_fs sources root 
-peridot_client_fs_SRCS_ROOT := services
-
-# peridot_client_fs sources 
-peridot_client_fs_C_LIB_SRCS := \
-	$(peridot_client_fs_SRCS_ROOT)/src/peridot_client_fs.c
-
-# peridot_rpc_server sources root 
-peridot_rpc_server_SRCS_ROOT := services
-
-# peridot_rpc_server sources 
-peridot_rpc_server_C_LIB_SRCS := \
-	$(peridot_rpc_server_SRCS_ROOT)/src/peridot_rpc_server.c \
-	$(peridot_rpc_server_SRCS_ROOT)/src/bson.c
-
 # peridot_swi_driver sources root 
 peridot_swi_driver_SRCS_ROOT := drivers
 
 # peridot_swi_driver sources 
 peridot_swi_driver_C_LIB_SRCS := \
 	$(peridot_swi_driver_SRCS_ROOT)/src/peridot_swi.c \
-	$(peridot_swi_driver_SRCS_ROOT)/src/peridot_swi_flash.c
+	$(peridot_swi_driver_SRCS_ROOT)/src/peridot_spi_flash.c
 
 peridot_swi_driver_ASM_LIB_SRCS := \
-	$(peridot_swi_driver_SRCS_ROOT)/src/peridot_swi_flash_boot.S
+	$(peridot_swi_driver_SRCS_ROOT)/src/peridot_spi_flash_boot.S
 
 
 # Assemble all component C source files 
 COMPONENT_C_LIB_SRCS += \
-	$(altera_avalon_jtag_uart_driver_C_LIB_SRCS) \
 	$(altera_avalon_timer_driver_C_LIB_SRCS) \
 	$(altera_nios2_gen2_hal_driver_C_LIB_SRCS) \
 	$(altera_onchip_flash_driver_C_LIB_SRCS) \
 	$(flash_writer_C_LIB_SRCS) \
 	$(hal_C_LIB_SRCS) \
-	$(peridot_client_fs_C_LIB_SRCS) \
-	$(peridot_rpc_server_C_LIB_SRCS) \
 	$(peridot_swi_driver_C_LIB_SRCS)
 
 # Assemble all component assembly source files 

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_fast' in SOPC Builder design 'ngs_boot_core'
  * SOPC Builder design path: ../../ngs_boot_core.sopcinfo
  *
- * Generated: Wed Jul 05 12:15:43 JST 2017
+ * Generated: Mon Oct 09 01:02:15 JST 2017
  */
 
 /*
@@ -91,13 +91,5 @@
  */
 
 #define ALT_ALLOW_CODE_AT_RESET
-
-
-/*
- * The alt_load() facility is called from crt0 to copy sections into RAM.
- *
- */
-
-#define ALT_LOAD_COPY_RWDATA
 
 #endif /* __LINKER_H_ */

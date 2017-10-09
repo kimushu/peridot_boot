@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_fast' in SOPC Builder design 'ngs_boot_core'
  * SOPC Builder design path: ../../ngs_boot_core.sopcinfo
  *
- * Generated: Wed Jul 05 12:20:48 JST 2017
+ * Generated: Mon Oct 09 01:32:01 JST 2017
  */
 
 /*
@@ -167,24 +167,18 @@
 #define ALT_NUM_EXTERNAL_INTERRUPT_CONTROLLERS 0
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
-#define ALT_STDERR "/dev/jtag_uart"
-#define ALT_STDERR_BASE 0x10000040
-#define ALT_STDERR_DEV jtag_uart
-#define ALT_STDERR_IS_JTAG_UART
-#define ALT_STDERR_PRESENT
-#define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
-#define ALT_STDIN "/dev/jtag_uart"
-#define ALT_STDIN_BASE 0x10000040
-#define ALT_STDIN_DEV jtag_uart
-#define ALT_STDIN_IS_JTAG_UART
-#define ALT_STDIN_PRESENT
-#define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
-#define ALT_STDOUT "/dev/jtag_uart"
-#define ALT_STDOUT_BASE 0x10000040
-#define ALT_STDOUT_DEV jtag_uart
-#define ALT_STDOUT_IS_JTAG_UART
-#define ALT_STDOUT_PRESENT
-#define ALT_STDOUT_TYPE "altera_avalon_jtag_uart"
+#define ALT_STDERR "/dev/null"
+#define ALT_STDERR_BASE 0x0
+#define ALT_STDERR_DEV null
+#define ALT_STDERR_TYPE ""
+#define ALT_STDIN "/dev/null"
+#define ALT_STDIN_BASE 0x0
+#define ALT_STDIN_DEV null
+#define ALT_STDIN_TYPE ""
+#define ALT_STDOUT "/dev/null"
+#define ALT_STDOUT_BASE 0x0
+#define ALT_STDOUT_DEV null
+#define ALT_STDOUT_TYPE ""
 #define ALT_SYSTEM_NAME "ngs_boot_core"
 
 
@@ -259,17 +253,6 @@
 
 
 /*
- * peridot_client_fs configuration
- *
- */
-
-#define PERIDOT_CLIENT_FS_MAX_FDS 16
-#define PERIDOT_CLIENT_FS_RO_PATH ""
-#define PERIDOT_CLIENT_FS_RW_PATH "/sys/flash/"
-#define PERIDOT_CLIENT_FS_WO_PATH ""
-
-
-/*
  * peridot_hostbridge configuration
  *
  */
@@ -290,22 +273,13 @@
 
 
 /*
- * peridot_rpc_server configuration
- *
- */
-
-#define PERIDOT_RPCSRV_ISOLATED_SECTION ".public"
-#define PERIDOT_RPCSRV_REQUEST_LENGTH 32768
-#define PERIDOT_RPCSRV_RESPONSE_LENGTH 32768
-#define PERIDOT_RPCSRV_WORKER_THREADS 0
-
-
-/*
  * peridot_swi_driver configuration
  *
  */
 
-#define SWI_FLASH_BOOT_OFFSET 0x0
+#define PERIDOT_SPI_FLASH_BOOT_OFFSET 0x0
+#define PERIDOT_SWI_DRIVER_FLASH_INSTANCE peridot_hostbridge
+#define PERIDOT_SWI_FLASH_ENABLE
 
 
 /*
