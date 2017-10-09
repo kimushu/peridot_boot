@@ -3,6 +3,11 @@
  * @brief Self firmware updater for Rubic
  */
 
+#include "md5.h"
+#define hash_init md5_init
+#define hash_calc md5_calc
+typedef md5hash_t hash_t;
+
 #include "rubic_fwup.h"
 #include "rubic_fwup_msg.h"
 #include <errno.h>
@@ -11,31 +16,6 @@
 #include <sys/stat.h>
 #include "peridot_swi.h"
 #include <stdint.h>
-
-static uint32_t crc32_table[256];
-
-static void crc32_init(void)
-{
-    int i;
-    for (i = 0; i < 256; ++i) {
-        uint32_t c = i;
-        int j;
-        for (j = 0; j < 8; ++j) {
-            c = (c & 1) ? (0xedb88320 ^ (c >> 1)) : (c >> 1);
-        }
-        crc32_table[i] = c;
-    }
-}
-
-static uint32_t crc32(void *ptr, int len){
-    uint32_t c = 0xffffffff;
-    uint8_t *buf = (uint8_t *)ptr;
-    int i;
-    for (i = 0; i < len; ++i)    {
-        c = crc32_table[(c ^ *buf++) & 0xff] ^ (c >> 8);
-    }
-    return c ^ 0xffffffff;
-}
 
 static const rubic_fwup_memory *find_memory(const rubic_fwup_memory *memories, const char *name)
 {
@@ -88,7 +68,7 @@ static int read_memory(const rubic_fwup_memory *mem, rubic_fwup_msg_read *msg)
     res->length = read_len;
     res->sector_size = st.st_blksize;
     memcpy(res->data + read_len, "\0\0\0", 3);
-    res->hash = crc32(&res->data[0], read_len);
+    hash_calc(&res->hash, &res->data[0], read_len);
     return sizeof(*res) + read_len;
 }
 
@@ -97,7 +77,7 @@ static int hash_memory(const rubic_fwup_memory *mem, rubic_fwup_msg_hash *msg)
     rubic_fwup_res_hash *res = (rubic_fwup_res_hash *)msg;
     int fd;
     struct stat st;
-    alt_u32 *hash;
+    hash_t *hash;
 
     if (!mem) {
         return -ENODEV;
@@ -131,7 +111,7 @@ static int hash_memory(const rubic_fwup_memory *mem, rubic_fwup_msg_hash *msg)
             close(fd);
             return -EIO;
         }
-        *hash = crc32(hash, st.st_blksize);
+        hash_calc(hash, hash, st.st_blksize);
     }
     close(fd);
 
@@ -166,16 +146,16 @@ static int write_memory(const rubic_fwup_memory *mem, rubic_fwup_msg_write *msg)
     address = 0;
     ent = msg->entries;
     for (;;) {
-    	alt_u32 actual;
+        hash_t actual;
 
         if (ent->length == 0) {
-        	break;
+            break;
         }
 
         address = ent->offset;
 
-    	actual = crc32(&ent->data[0], ent->length);
-        if (actual != ent->hash) {
+        hash_calc(&actual, &ent->data[0], ent->length);
+        if (memcmp(&actual, &ent->hash, sizeof(actual)) != 0) {
             result = EILSEQ;
             break;
         }
@@ -218,7 +198,13 @@ int rubic_fwup_service(uintptr_t message_addr, size_t message_size, const rubic_
 
     peridot_swi_write_message(0);
 
-    crc32_init();
+    hash_init();
+    hash_t hoge;
+    hash_calc(&hoge, "1234", 4);
+    hash_calc(&hoge, "1234567890123456789012345678901234567890123456789012345", 55);
+    hash_calc(&hoge, "12345678901234567890123456789012345678901234567890123456", 56);
+    hash_calc(&hoge, "1234567890123456789012345678901234567890123456789012345678901234", 64);
+    hash_calc(&hoge, "12345678", 8);
 
     memcpy(res->boot.signature, "boot", 4);
     res->boot.capacity = message_size;

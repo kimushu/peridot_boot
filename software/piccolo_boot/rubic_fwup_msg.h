@@ -13,6 +13,15 @@
 extern "C" {
 #endif
 
+#ifdef HASH_USE_CRC32
+typedef unsigned int hash_t;
+#endif
+#ifdef HASH_USE_MD5
+typedef struct md5hash_s {
+    unsigned int words[4];
+} hash_t;
+#endif
+
 typedef struct {
     char signature[4];  // xxxx
     size_t capacity;
@@ -29,7 +38,7 @@ typedef struct {
     size_t capacity;
     size_t length;
     size_t sector_size;
-    alt_u32 hash;
+    hash_t hash;
     alt_u8 data[0];
 } rubic_fwup_res_read;
 
@@ -44,13 +53,13 @@ typedef struct {
     size_t capacity;
     size_t length;
     size_t sector_size;
-    alt_u32 hash[0];
+    hash_t hash[0];
 } rubic_fwup_res_hash;
 
 typedef struct {
     size_t length;
     size_t offset;
-    alt_u32 hash;
+    hash_t hash;
     alt_u8 data[0];
 } rubic_fwup_msg_write_entry;
 
