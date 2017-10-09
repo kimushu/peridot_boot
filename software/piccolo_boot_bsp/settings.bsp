@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2017/10/09 13:15:43</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1507522543214</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2017/10/09 13:32:23</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1507523543676</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\Works\Altera\peridot_boot\software\piccolo_boot_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\ngs_boot_core.sopcinfo</SopcDesignFile>
@@ -1118,7 +1118,15 @@
         </LinkerSection>
         <DriverPackageInfo>
                 <name>none</name>
+                <moduleName>systimer</moduleName>
+        </DriverPackageInfo>
+        <DriverPackageInfo>
+                <name>none</name>
                 <moduleName>jtag_uart</moduleName>
+        </DriverPackageInfo>
+        <DriverPackageInfo>
+                <name>none</name>
+                <moduleName>gpio</moduleName>
         </DriverPackageInfo>
         <SoftwarePackageInfo>
                 <name>flash_writer</name>

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_fast' in SOPC Builder design 'ngs_boot_core'
  * SOPC Builder design path: ../../ngs_boot_core.sopcinfo
  *
- * Generated: Mon Oct 09 01:24:34 JST 2017
+ * Generated: Mon Oct 09 13:31:31 JST 2017
  */
 
 /*
@@ -59,7 +59,6 @@
  */
 
 #include "altera_nios2_gen2_irq.h"
-#include "altera_avalon_timer.h"
 #include "altera_onchip_flash.h"
 #include "flash_writer.h"
 #include "peridot_hostbridge.h"
@@ -69,7 +68,6 @@
  */
 
 ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( NIOS2_FAST, nios2_fast);
-ALTERA_AVALON_TIMER_INSTANCE ( SYSTIMER, systimer);
 ALTERA_ONCHIP_FLASH_DATA_CSR_INSTANCE ( UFM, UFM_DATA, UFM_CSR, ufm);
 FLASH_WRITER_INSTANCE ( FLASH_WRITER, flash_writer);
 PERIDOT_HOSTBRIDGE_INSTANCE ( PERIDOT_HOSTBRIDGE, peridot_hostbridge);
@@ -95,7 +93,6 @@ void alt_irq_init ( const void* base )
 
 void alt_sys_init( void )
 {
-    ALTERA_AVALON_TIMER_INIT ( SYSTIMER, systimer);
     ALTERA_ONCHIP_FLASH_INIT ( UFM, ufm);
     PERIDOT_HOSTBRIDGE_INIT ( PERIDOT_HOSTBRIDGE, peridot_hostbridge);
     FLASH_WRITER_INIT ( FLASH_WRITER, flash_writer);
