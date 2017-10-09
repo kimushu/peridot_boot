@@ -22,10 +22,10 @@
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>2017/10/09 13:32:23</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>2017/10/09 20:39:24</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1507523543676</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1507549164777</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>D:\Works\Altera\peridot_boot\software\piccolo_boot_bsp</td>
@@ -113,6 +113,9 @@
 <th align="left" width="15%">Software Package</th><th align="left" width="15%">Version</th>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>digests</td><td>default</td>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>flash_writer</td><td>default</td>
 </tr>
 </table>
@@ -136,6 +139,114 @@
 <br>
 <br>
 <h3>Settings</h3>
+<table border="1" bgcolor="#FFFFCC" width="60%">
+<tr bgcolor="#77BBFF">
+<td align="left" width="15%">Setting Name:</td><td align="left">digests.crc32.enable</td>
+</tr>
+<tr>
+<td width="20%">Identifier:</td><td>DIGESTS_CRC32_ENABLE</td>
+</tr>
+<tr>
+<td width="20%">Default Value:</td><td>1</td>
+</tr>
+<tr>
+<td width="20%">Value:</td><td>false</td>
+</tr>
+<tr>
+<td width="20%">Type:</td><td>BooleanDefineOnly</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Destination:</td><td>system_h_define</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Description:</td><td>Enable CRC-32 digest</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Restrictions:</td><td>none</td>
+</tr>
+</table>
+<br>
+<table border="1" bgcolor="#FFFFCC" width="60%">
+<tr bgcolor="#77BBFF">
+<td align="left" width="15%">Setting Name:</td><td align="left">digests.crc32.static_table</td>
+</tr>
+<tr>
+<td width="20%">Identifier:</td><td>DIGESTS_CRC32_STATIC_TABLE</td>
+</tr>
+<tr>
+<td width="20%">Default Value:</td><td>1</td>
+</tr>
+<tr>
+<td width="20%">Value:</td><td>false</td>
+</tr>
+<tr>
+<td width="20%">Type:</td><td>BooleanDefineOnly</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Destination:</td><td>system_h_define</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Description:</td><td>Use statically defined table for CRC-32. Turn off to reduce .rodata section size.</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Restrictions:</td><td>none</td>
+</tr>
+</table>
+<br>
+<table border="1" bgcolor="#FFFFCC" width="60%">
+<tr bgcolor="#77BBFF">
+<td align="left" width="15%">Setting Name:</td><td align="left">digests.md5.enable</td>
+</tr>
+<tr>
+<td width="20%">Identifier:</td><td>DIGESTS_MD5_ENABLE</td>
+</tr>
+<tr>
+<td width="20%">Default Value:</td><td>1</td>
+</tr>
+<tr>
+<td width="20%">Value:</td><td>true</td>
+</tr>
+<tr>
+<td width="20%">Type:</td><td>BooleanDefineOnly</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Destination:</td><td>system_h_define</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Description:</td><td>Enable MD5 digest</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Restrictions:</td><td>none</td>
+</tr>
+</table>
+<br>
+<table border="1" bgcolor="#FFFFCC" width="60%">
+<tr bgcolor="#77BBFF">
+<td align="left" width="15%">Setting Name:</td><td align="left">digests.md5.static_table</td>
+</tr>
+<tr>
+<td width="20%">Identifier:</td><td>DIGESTS_MD5_STATIC_TABLE</td>
+</tr>
+<tr>
+<td width="20%">Default Value:</td><td>1</td>
+</tr>
+<tr>
+<td width="20%">Value:</td><td>true</td>
+</tr>
+<tr>
+<td width="20%">Type:</td><td>BooleanDefineOnly</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Destination:</td><td>system_h_define</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Description:</td><td>Use statically defined table for MD5. Turn off to reduce .rodata section size. (However, dynamic table construction requires double-precision math functions.)</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Restrictions:</td><td>none</td>
+</tr>
+</table>
+<br>
 <table border="1" bgcolor="#FFFFCC" width="60%">
 <tr bgcolor="#77BBFF">
 <td align="left" width="15%">Setting Name:</td><td align="left">flash_writer.on_chip_flash.enabled</td>

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_fast' in SOPC Builder design 'ngs_boot_core'
  * SOPC Builder design path: ../../ngs_boot_core.sopcinfo
  *
- * Generated: Mon Oct 09 01:32:01 JST 2017
+ * Generated: Mon Oct 09 20:39:25 JST 2017
  */
 
 /*
@@ -180,6 +180,15 @@
 #define ALT_STDOUT_DEV null
 #define ALT_STDOUT_TYPE ""
 #define ALT_SYSTEM_NAME "ngs_boot_core"
+
+
+/*
+ * digests configuration
+ *
+ */
+
+#define DIGESTS_MD5_ENABLE
+#define DIGESTS_MD5_STATIC_TABLE
 
 
 /*

@@ -1,4 +1,7 @@
 #include "md5.h"
+#include "system.h"
+#ifdef DIGESTS_MD5_ENABLE
+
 #include <string.h>
 
 static const uint8_t md5_table1[] = {
@@ -8,7 +11,8 @@ static const uint8_t md5_table1[] = {
     6, 10, 15, 21,  6, 10, 15, 21,  6, 10, 15, 21,  6, 10, 15, 21,
 };
 
-static const uint32_t md5_table2[] = {
+#ifdef DIGESTS_MD5_STATIC_TABLE
+static const uint32_t md5_table2[64] = {
     0xd76aa478, 0xe8c7b756, 0x242070db, 0xc1bdceee,
     0xf57c0faf, 0x4787c62a, 0xa8304613, 0xfd469501,
     0x698098d8, 0x8b44f7af, 0xffff5bb1, 0x895cd7be,
@@ -26,18 +30,25 @@ static const uint32_t md5_table2[] = {
     0x6fa87e4f, 0xfe2ce6e0, 0xa3014314, 0x4e0811a1,
     0xf7537e82, 0xbd3af235, 0x2ad7d2bb, 0xeb86d391,
 };
+#else   /* !DIGESTS_MD5_STATIC_TABLE */
+# include <math.h>
+static uint32_t md5_table2[64];
 
-void md5_init(void)
+void digest_md5_init(void)
 {
-    // Nothing to do
+    int i;
+    for (i = 0; i < 64; ++i) {
+        md5_table2[i] = (uint32_t)floor(fabs(sin(i + 1)) * 4294967296.0);
+    }
 }
+#endif  /* !DIGESTS_MD5_STATIC_TABLE */
 
-static uint32_t leftrotate(uint32_t value, int shift)
+static uint32_t left_rotate(uint32_t value, int shift)
 {
     return (value << shift) | (value >> (32 - shift));
 }
 
-void md5_calc(md5hash_t *result, const void *ptr, int len)
+void digest_md5_calc(digest_md5_t *result, const void *ptr, int len)
 {
     const uint8_t *buf = (const uint8_t *)ptr;
     uint8_t temp[64];
@@ -96,7 +107,7 @@ void md5_calc(md5hash_t *result, const void *ptr, int len)
             uint32_t dTemp = D;
             D = C;
             C = B;
-            B = B + leftrotate(A + F + md5_table2[i] + input[g], md5_table1[i]);
+            B = B + left_rotate(A + F + md5_table2[i] + input[g], md5_table1[i]);
             A = dTemp;
         }
         a0 += A;
@@ -110,3 +121,4 @@ void md5_calc(md5hash_t *result, const void *ptr, int len)
     result->words[2] = c0;
     result->words[3] = d0;
 }
+#endif  /* DIGESTS_MD5_ENABLE */

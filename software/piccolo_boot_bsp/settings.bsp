@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2017/10/09 13:32:23</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1507523543676</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2017/10/09 20:39:24</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1507549164777</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\Works\Altera\peridot_boot\software\piccolo_boot_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\ngs_boot_core.sopcinfo</SopcDesignFile>
@@ -959,6 +959,54 @@
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
         <Setting>
+                <SettingName>digests.md5.enable</SettingName>
+                <Identifier>DIGESTS_MD5_ENABLE</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>true</Value>
+                <DefaultValue>1</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Enable MD5 digest</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>digests.md5.static_table</SettingName>
+                <Identifier>DIGESTS_MD5_STATIC_TABLE</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>true</Value>
+                <DefaultValue>1</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Use statically defined table for MD5. Turn off to reduce .rodata section size. (However, dynamic table construction requires double-precision math functions.)</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>digests.crc32.enable</SettingName>
+                <Identifier>DIGESTS_CRC32_ENABLE</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>false</Value>
+                <DefaultValue>1</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Enable CRC-32 digest</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>digests.crc32.static_table</SettingName>
+                <Identifier>DIGESTS_CRC32_STATIC_TABLE</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>false</Value>
+                <DefaultValue>1</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Use statically defined table for CRC-32. Turn off to reduce .rodata section size.</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
                 <SettingName>peridot_swi_driver.flash.enable</SettingName>
                 <Identifier>PERIDOT_SWI_FLASH_ENABLE</Identifier>
                 <Type>BooleanDefineOnly</Type>
@@ -1130,6 +1178,10 @@
         </DriverPackageInfo>
         <SoftwarePackageInfo>
                 <name>flash_writer</name>
+                <version>default</version>
+        </SoftwarePackageInfo>
+        <SoftwarePackageInfo>
+                <name>digests</name>
                 <version>default</version>
         </SoftwarePackageInfo>
 </sch:Settings>

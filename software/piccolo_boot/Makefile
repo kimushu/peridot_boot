@@ -144,7 +144,6 @@ ELF := piccolo_boot.elf
 # Paths to C, C++, and assembly source files.
 C_SRCS += main.c
 C_SRCS += rubic_fwup.c
-C_SRCS += md5.c
 CXX_SRCS :=
 ASM_SRCS :=
 

@@ -4,9 +4,8 @@
  */
 
 #include "md5.h"
-#define hash_init md5_init
-#define hash_calc md5_calc
-typedef md5hash_t hash_t;
+typedef digest_md5_t hash_t;
+#define hash_calc   digest_md5_calc
 
 #include "rubic_fwup.h"
 #include "rubic_fwup_msg.h"
@@ -197,14 +196,6 @@ int rubic_fwup_service(uintptr_t message_addr, size_t message_size, const rubic_
     rubic_fwup_message *msg = (rubic_fwup_message *)res;
 
     peridot_swi_write_message(0);
-
-    hash_init();
-    hash_t hoge;
-    hash_calc(&hoge, "1234", 4);
-    hash_calc(&hoge, "1234567890123456789012345678901234567890123456789012345", 55);
-    hash_calc(&hoge, "12345678901234567890123456789012345678901234567890123456", 56);
-    hash_calc(&hoge, "1234567890123456789012345678901234567890123456789012345678901234", 64);
-    hash_calc(&hoge, "12345678", 8);
 
     memcpy(res->boot.signature, "boot", 4);
     res->boot.capacity = message_size;

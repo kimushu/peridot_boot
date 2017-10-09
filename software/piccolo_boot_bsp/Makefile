@@ -252,6 +252,14 @@ altera_onchip_flash_driver_SRCS_ROOT := drivers
 altera_onchip_flash_driver_C_LIB_SRCS := \
 	$(altera_onchip_flash_driver_SRCS_ROOT)/src/altera_onchip_flash.c
 
+# digests sources root 
+digests_SRCS_ROOT := services
+
+# digests sources 
+digests_C_LIB_SRCS := \
+	$(digests_SRCS_ROOT)/src/md5.c \
+	$(digests_SRCS_ROOT)/src/crc32.c
+
 # flash_writer sources root 
 flash_writer_SRCS_ROOT := services
 
@@ -337,6 +345,7 @@ peridot_swi_driver_ASM_LIB_SRCS := \
 COMPONENT_C_LIB_SRCS += \
 	$(altera_nios2_gen2_hal_driver_C_LIB_SRCS) \
 	$(altera_onchip_flash_driver_C_LIB_SRCS) \
+	$(digests_C_LIB_SRCS) \
 	$(flash_writer_C_LIB_SRCS) \
 	$(hal_C_LIB_SRCS) \
 	$(peridot_swi_driver_C_LIB_SRCS)
