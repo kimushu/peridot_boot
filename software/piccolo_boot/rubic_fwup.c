@@ -9,7 +9,6 @@
 #include <string.h>
 #include <sys/fcntl.h>
 #include <sys/stat.h>
-//#include "sys/alt_cache.h"
 #include "peridot_swi.h"
 #include <stdint.h>
 
@@ -169,11 +168,9 @@ static int write_memory(const rubic_fwup_memory *mem, rubic_fwup_msg_write *msg)
     for (;;) {
     	alt_u32 actual;
 
-        //alt_dcache_flush_no_writeback(ent, sizeof(*ent));
         if (ent->length == 0) {
         	break;
         }
-        //alt_dcache_flush_no_writeback(ent->data, ent->length);
 
         address = ent->offset;
 
@@ -225,7 +222,6 @@ int rubic_fwup_service(uintptr_t message_addr, size_t message_size, const rubic_
 
     memcpy(res->boot.signature, "boot", 4);
     res->boot.capacity = message_size;
-    //alt_dcache_flush(res, sizeof(res->boot));
 
     for (;;) {
         int result;
@@ -241,8 +237,6 @@ int rubic_fwup_service(uintptr_t message_addr, size_t message_size, const rubic_
             }
         }
 
-        //alt_dcache_flush_no_writeback(msg, sizeof(*msg));
-
         // Process message
         result = ESRCH;
         if (memcmp(msg->signature, "Stop", 4) == 0) {
@@ -250,7 +244,6 @@ int rubic_fwup_service(uintptr_t message_addr, size_t message_size, const rubic_
         	memcpy(res->error.signature, "----", 4);
         	res->error.result = 0;
         	res->error.capacity = 0;
-        	//alt_dcache_flush(res, sizeof(res->error));
             peridot_swi_write_message(message_addr);
             break;
         } else if (msg->signature[0] == 'R') {
@@ -269,9 +262,6 @@ int rubic_fwup_service(uintptr_t message_addr, size_t message_size, const rubic_
             // Unknown
             memcpy(res->error.signature, "err_", 4);
             res->error.result = -result;
-            //alt_dcache_flush(res, sizeof(res->error));
-        } else {
-            //alt_dcache_flush(res, result);
         }
     }
 
