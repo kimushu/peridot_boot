@@ -344,6 +344,7 @@ ELF_PATCH_FLAG  += --stdout_dev none
 #------------------------------------------------------------------------------
 
 ALT_INCLUDE_DIRS += $(ALT_LIBRARY_ROOT_DIR)/services/inc
+ALT_INCLUDE_DIRS += $(ALT_LIBRARY_ROOT_DIR)/drivers/fatfs/src
 ALT_INCLUDE_DIRS += $(ALT_LIBRARY_ROOT_DIR)/HAL/inc
 
 #------------------------------------------------------------------------------

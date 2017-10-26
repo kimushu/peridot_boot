@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2017/10/09 20:39:24</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1507549164777</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2017/10/26 20:27:13</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1509017233107</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\Works\Altera\peridot_boot\software\piccolo_boot_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\ngs_boot_core.sopcinfo</SopcDesignFile>
@@ -959,6 +959,162 @@
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
         <Setting>
+                <SettingName>epcs_fatfs.mount_point</SettingName>
+                <Identifier>EPCS_FATFS_MOUNT_POINT</Identifier>
+                <Type>QuotedString</Type>
+                <Value>/mnt/epcs</Value>
+                <DefaultValue>/mnt/epcs</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Mount point</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>epcs_fatfs.interface.use_peridot_spi_flash</SettingName>
+                <Identifier>EPCS_FATFS_IF_PERIDOT_SPI_FLASH</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>true</Value>
+                <DefaultValue>0</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Use SPI flash interface (peridot_spi_master_driver)</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>epcs_fatfs.interface.use_altera_spi</SettingName>
+                <Identifier>EPCS_FATFS_IF_ALTERA_SPI</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>false</Value>
+                <DefaultValue>0</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Use SPI interface (altera_avalon_spi_driver)</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>epcs_fatfs.interface.use_altera_epcs</SettingName>
+                <Identifier>EPCS_FATFS_IF_ALTERA_EPCS</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>false</Value>
+                <DefaultValue>0</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Use EPCS interface (altera_avalon_epcs_flash_controller_driver)</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>epcs_fatfs.interface.base_address</SettingName>
+                <Identifier>EPCS_FATFS_IF_INST_NAME</Identifier>
+                <Type>UnquotedString</Type>
+                <Value>0x10000014</Value>
+                <DefaultValue>0</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Instance name (SPI and EPCS interface only)</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>epcs_fatfs.interface.spi_slavenumber</SettingName>
+                <Identifier>EPCS_FATFS_IF_SPI_SLAVE</Identifier>
+                <Type>DecimalNumber</Type>
+                <Value>0</Value>
+                <DefaultValue>0</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Slave number (SPI interface only)</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>epcs_fatfs.flash.sector_size</SettingName>
+                <Identifier>EPCS_FATFS_FLASH_SECTOR</Identifier>
+                <Type>DecimalNumber</Type>
+                <Value>4096</Value>
+                <DefaultValue>4096</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Sector size in bytes</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>epcs_fatfs.flash.start_address</SettingName>
+                <Identifier>EPCS_FATFS_FLASH_START</Identifier>
+                <Type>HexNumber</Type>
+                <Value>0x80000</Value>
+                <DefaultValue>0x0</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Start address of flash</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>epcs_fatfs.flash.end_address</SettingName>
+                <Identifier>EPCS_FATFS_FLASH_END</Identifier>
+                <Type>HexNumber</Type>
+                <Value>0x0</Value>
+                <DefaultValue>0x0</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>End address of flash (0=auto detect)</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>epcs_fatfs.flash.sector_erase_cmd</SettingName>
+                <Identifier>EPCS_FATFS_FLASH_CMD_ERASE</Identifier>
+                <Type>HexNumber</Type>
+                <Value>0x20</Value>
+                <DefaultValue>0x20</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Command for sector erase</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>epcs_fatfs.flash.enable_verify</SettingName>
+                <Identifier>EPCS_FATFS_FLASH_VERIFY</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>false</Value>
+                <DefaultValue>0</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Verify after writing sector</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>epcs_fatfs.fatfs.use_lfn</SettingName>
+                <Identifier>EPCS_FATFS_USE_LFN</Identifier>
+                <Type>Boolean</Type>
+                <Value>0</Value>
+                <DefaultValue>0</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Use LFN feature</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>epcs_fatfs.fatfs.code_page</SettingName>
+                <Identifier>EPCS_FATFS_CODE_PAGE</Identifier>
+                <Type>DecimalNumber</Type>
+                <Value>1</Value>
+                <DefaultValue>1</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>Code page (1:ASCII, 437:US, 932:Japanese, etc)</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
                 <SettingName>digests.md5.enable</SettingName>
                 <Identifier>DIGESTS_MD5_ENABLE</Identifier>
                 <Type>BooleanDefineOnly</Type>
@@ -1178,6 +1334,10 @@
         </DriverPackageInfo>
         <SoftwarePackageInfo>
                 <name>flash_writer</name>
+                <version>default</version>
+        </SoftwarePackageInfo>
+        <SoftwarePackageInfo>
+                <name>epcs_fatfs</name>
                 <version>default</version>
         </SoftwarePackageInfo>
         <SoftwarePackageInfo>

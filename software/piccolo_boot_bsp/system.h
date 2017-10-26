@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_fast' in SOPC Builder design 'ngs_boot_core'
  * SOPC Builder design path: ../../ngs_boot_core.sopcinfo
  *
- * Generated: Mon Oct 09 20:39:25 JST 2017
+ * Generated: Thu Oct 26 20:17:32 JST 2017
  */
 
 /*
@@ -189,6 +189,23 @@
 
 #define DIGESTS_MD5_ENABLE
 #define DIGESTS_MD5_STATIC_TABLE
+
+
+/*
+ * epcs_fatfs configuration
+ *
+ */
+
+#define EPCS_FATFS_CODE_PAGE 1
+#define EPCS_FATFS_FLASH_CMD_ERASE 0x20
+#define EPCS_FATFS_FLASH_END 0x0
+#define EPCS_FATFS_FLASH_SECTOR 4096
+#define EPCS_FATFS_FLASH_START 0x80000
+#define EPCS_FATFS_IF_INST_NAME 0x10000014
+#define EPCS_FATFS_IF_PERIDOT_SPI_FLASH
+#define EPCS_FATFS_IF_SPI_SLAVE 0
+#define EPCS_FATFS_MOUNT_POINT "/mnt/epcs"
+#define EPCS_FATFS_USE_LFN 0
 
 
 /*

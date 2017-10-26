@@ -260,6 +260,16 @@ digests_C_LIB_SRCS := \
 	$(digests_SRCS_ROOT)/src/md5.c \
 	$(digests_SRCS_ROOT)/src/crc32.c
 
+# epcs_fatfs sources root 
+epcs_fatfs_SRCS_ROOT := drivers
+
+# epcs_fatfs sources 
+epcs_fatfs_C_LIB_SRCS := \
+	$(epcs_fatfs_SRCS_ROOT)/fatfs/src/ff.c \
+	$(epcs_fatfs_SRCS_ROOT)/fatfs/src/option/unicode.c \
+	$(epcs_fatfs_SRCS_ROOT)/src/epcs_fatfs.c \
+	$(epcs_fatfs_SRCS_ROOT)/src/epcs_fatfs_diskio.c
+
 # flash_writer sources root 
 flash_writer_SRCS_ROOT := services
 
@@ -346,6 +356,7 @@ COMPONENT_C_LIB_SRCS += \
 	$(altera_nios2_gen2_hal_driver_C_LIB_SRCS) \
 	$(altera_onchip_flash_driver_C_LIB_SRCS) \
 	$(digests_C_LIB_SRCS) \
+	$(epcs_fatfs_C_LIB_SRCS) \
 	$(flash_writer_C_LIB_SRCS) \
 	$(hal_C_LIB_SRCS) \
 	$(peridot_swi_driver_C_LIB_SRCS)

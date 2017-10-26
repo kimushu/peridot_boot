@@ -10,3 +10,6 @@
 [submodule "ip/flash_writer"]
 	path = ip/flash_writer
 	url = https://github.com/kimushu/flash_writer.git
+[submodule "ip/epcs_fatfs"]
+	path = ip/epcs_fatfs
+	url = https://github.com/kimushu/epcs_fatfs.git
