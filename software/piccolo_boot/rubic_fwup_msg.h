@@ -82,6 +82,7 @@ typedef struct {
 
 typedef struct {
     char signature[4];  // fxxx
+    size_t capacity;
     int result;
 } rubic_fwup_res_format;
 
