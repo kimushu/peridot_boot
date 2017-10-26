@@ -21,7 +21,12 @@ typedef struct rubic_fwup_memory_s {
     ssize_t length;
 } rubic_fwup_memory;
 
-extern int rubic_fwup_service(uintptr_t message_addr, size_t message_size, const rubic_fwup_memory *memories);
+typedef struct rubic_fwup_storage_s {
+    const char *name;
+    int (*format)(int flags);
+} rubic_fwup_storage;
+
+extern int rubic_fwup_service(uintptr_t message_addr, size_t message_size, const rubic_fwup_memory *memories, const rubic_fwup_storage *storages);
 
 #ifdef __cplusplus
 }   /* extern "C" */

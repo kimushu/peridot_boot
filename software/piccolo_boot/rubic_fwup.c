@@ -28,6 +28,18 @@ static const rubic_fwup_memory *find_memory(const rubic_fwup_memory *memories, c
     return NULL;
 }
 
+static const rubic_fwup_storage *find_storage(const rubic_fwup_storage *storages, const char *name)
+{
+    const rubic_fwup_storage *str;
+    for (str = storages; str->name; ++str) {
+        if (memcmp(str->name, name, 3) == 0) {
+            return str;
+        }
+    }
+    errno = ESRCH;
+    return NULL;
+}
+
 static int read_memory(const rubic_fwup_memory *mem, rubic_fwup_msg_read *msg)
 {
     rubic_fwup_res_read *res = (rubic_fwup_res_read *)msg;
@@ -190,7 +202,21 @@ static int write_memory(const rubic_fwup_memory *mem, rubic_fwup_msg_write *msg)
     return sizeof(*res);
 }
 
-int rubic_fwup_service(uintptr_t message_addr, size_t message_size, const rubic_fwup_memory *memories)
+static int format_storage(const rubic_fwup_storage *str, rubic_fwup_msg_format *msg)
+{
+    rubic_fwup_res_format *res = (rubic_fwup_res_format *)msg;
+    int result;
+
+    if (!str) {
+        return -ENODEV;
+    }
+    result = (*str->format)(msg->flags);
+    res->signature[0] = 'F';
+    res->result = result;
+    return sizeof(*res);
+}
+
+int rubic_fwup_service(uintptr_t message_addr, size_t message_size, const rubic_fwup_memory *memories, const rubic_fwup_storage *storages)
 {
     rubic_fwup_response *res = (rubic_fwup_response *)(message_addr | (1<<31));
     rubic_fwup_message *msg = (rubic_fwup_message *)res;
@@ -232,6 +258,9 @@ int rubic_fwup_service(uintptr_t message_addr, size_t message_size, const rubic_
         } else if (msg->signature[0] == 'W') {
             // Write memory
             result = write_memory(find_memory(memories, msg->signature + 1), &msg->write);
+        } else if (msg->signature[0] == 'F') {
+            // Format
+            result = format_storage(find_storage(storages, msg->signature + 1), &msg->format);
         }
 
         res->error.capacity = message_size;

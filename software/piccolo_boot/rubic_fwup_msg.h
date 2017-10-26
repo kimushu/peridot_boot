@@ -76,6 +76,16 @@ typedef struct {
 } rubic_fwup_res_write;
 
 typedef struct {
+    char signature[4];  // Fxxx
+    int flags;
+} rubic_fwup_msg_format;
+
+typedef struct {
+    char signature[4];  // fxxx
+    int result;
+} rubic_fwup_res_format;
+
+typedef struct {
     char signature[4];  // Stop
 } rubic_fwup_msg_stop;
 
@@ -90,6 +100,7 @@ typedef union {
     rubic_fwup_res_read read;
     rubic_fwup_res_hash hash;
     rubic_fwup_res_write write;
+    rubic_fwup_res_format format;
     rubic_fwup_res_error error;
 } rubic_fwup_response;
 
@@ -98,6 +109,7 @@ typedef union {
     rubic_fwup_msg_read read;
     rubic_fwup_msg_hash hash;
     rubic_fwup_msg_write write;
+    rubic_fwup_msg_format format;
     rubic_fwup_msg_stop stop;
 } rubic_fwup_message;
 
