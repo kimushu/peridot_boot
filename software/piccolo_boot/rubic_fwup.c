@@ -211,7 +211,7 @@ static int format_storage(const rubic_fwup_storage *str, rubic_fwup_msg_format *
         return -ENODEV;
     }
     result = (*str->format)(msg->flags);
-    res->signature[0] = 'F';
+    res->signature[0] = 'f';
     res->result = result;
     return sizeof(*res);
 }
